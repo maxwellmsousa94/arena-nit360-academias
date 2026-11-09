@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pickleball na Arena NIT 360 — aula grátis para alunos de academia</title>
+<meta name="description" content="Pickleball dos 16 aos 80 anos, com baixo impacto nas articulações. Agende sua aula experimental gratuita no Clube Espanhol, em Itaipu (Niterói).">
+<meta property="og:title" content="Pickleball na Arena NIT 360 — sua primeira aula é grátis">
+<meta property="og:description" content="Esporte novo, fácil de aprender e de baixo impacto. Aula experimental gratuita no Clube Espanhol, em Itaipu.">
+<meta name="theme-color" content="#0F2440">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* cores da logo: preto, branco, laranja + azul escuro */
+  --quadra:#0F2440; --quadra-esc:#0A1A2F; --cozinha:#121212; --bola:#F59E0B; --bola-forte:#E08A00;
+  --linha:#FFFFFF; --fundo:#F3F4F6; --tinta:#121212; --tinta-suave:#55595F;
+  --borda:#DDE0E5; --branco:#fff; --zap:#25D366;
+  --disp:"Big Shoulders Display","Arial Narrow",sans-serif;
+  --txt:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+section{scroll-margin-top:118px}
+@media (min-width:900px){section{scroll-margin-top:76px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{font-family:var(--txt);background:var(--fundo);color:var(--tinta);line-height:1.55;font-size:17px}
+img{max-width:100%;display:block}
+a{color:inherit}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--bola);outline-offset:3px;border-radius:4px}
+.miolo{max-width:1080px;margin:0 auto;padding:0 20px}
+
+/* ---------- Cabeçalho ---------- */
+.barra{position:sticky;top:0;z-index:30;background:var(--quadra-esc);border-bottom:3px solid var(--bola);color:#fff}
+.barra-in{max-width:1080px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:20px}
+.barra-logo img{height:38px;width:auto;display:block}
+.menu{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.menu::-webkit-scrollbar{display:none}
+.menu a{white-space:nowrap;text-decoration:none;font-weight:600;font-size:15px;padding:8px 12px;border-radius:999px;color:rgba(255,255,255,.82)}
+.menu a:hover{color:#fff;background:rgba(255,255,255,.08)}
+.menu a.ativo{color:var(--tinta);background:var(--bola)}
+.barra-zap{display:inline-flex;align-items:center;gap:8px;background:var(--zap);color:#08361b;font-weight:700;text-decoration:none;border-radius:999px;padding:8px 14px 8px 10px;font-size:15px;white-space:nowrap}
+.barra-zap .zap-ic{width:20px;height:20px}
+@media (max-width:899px){
+  .barra-in{flex-wrap:wrap;padding:8px 16px 0;gap:8px 12px}
+  .barra-logo img{height:32px}
+  .barra-zap{margin-left:auto}
+  .menu{order:3;flex:1 0 100%;margin:0 -16px;padding:4px 12px 8px}
+  .menu a{font-size:14px;padding:6px 11px}
+}
+/* bolinha piscando: atendimento ativo */
+.ao-vivo{position:relative;width:10px;height:10px;border-radius:50%;background:var(--zap);flex:none;box-shadow:0 0 0 2px rgba(255,255,255,.9)}
+.ao-vivo::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--zap);animation:pulso 1.8s ease-out infinite}
+.barra-zap .ao-vivo,.barra-zap .ao-vivo::after{background:#fff}
+.barra-zap .ao-vivo{box-shadow:none}
+@keyframes pulso{0%{transform:scale(1);opacity:.75}100%{transform:scale(3.2);opacity:0}}
+
+/* ---------- Topo / quadra ---------- */
+.quadra{background:var(--quadra);color:var(--linha);position:relative;overflow:hidden;padding:20px 0 0;scroll-margin-top:0}
+.quadra-linhas{position:absolute;inset:14px;border:3px solid rgba(255,255,255,.85);pointer-events:none}
+.quadra-linhas::before{content:"";position:absolute;left:50%;top:0;bottom:0;border-left:3px solid rgba(255,255,255,.85)}
+.cozinha{position:absolute;top:14px;bottom:14px;left:calc(50% - 14%);width:28%;background:var(--cozinha);border-left:3px solid rgba(255,255,255,.85);border-right:3px solid rgba(255,255,255,.85)}
+.rede{position:absolute;top:6px;bottom:6px;left:calc(50% - 3px);width:6px;background:repeating-linear-gradient(180deg,var(--bola) 0 4px,transparent 4px 9px)}
+@media (max-width:760px){
+  .quadra-linhas::before{left:0;right:0;top:50%;bottom:auto;border-left:0;border-top:3px solid rgba(255,255,255,.85)}
+  .cozinha{left:14px;right:14px;width:auto;top:calc(50% - 11%);bottom:auto;height:22%;border:0;border-top:3px solid rgba(255,255,255,.85);border-bottom:3px solid rgba(255,255,255,.85)}
+  .rede{left:6px;right:6px;width:auto;top:calc(50% - 3px);bottom:auto;height:6px;background:repeating-linear-gradient(90deg,var(--bola) 0 4px,transparent 4px 9px)}
+}
+.quadra-conteudo{position:relative;z-index:2;padding-top:96px;padding-bottom:56px}
+.quadra-conteudo{pointer-events:none}
+.placar{pointer-events:auto}
+@media (min-width:1100px){.quadra-conteudo{padding-top:48px}}
+/* bolinha em rali sobre a quadra */
+.rali{position:absolute;z-index:1;left:24px;right:24px;top:28px;height:70px;pointer-events:none}
+@media (min-width:1100px){.rali{left:auto;right:5%;width:calc(45% - 120px);top:22%;height:42%}}
+.rali-x{position:absolute;left:0;top:0;bottom:0;width:46px;animation:ralix 3.6s ease-in-out infinite alternate}
+@keyframes ralix{from{left:0}to{left:calc(100% - 46px)}}
+.rali-y{position:absolute;left:0;width:46px;height:46px;top:0;animation:raliy 1.8s cubic-bezier(.45,0,.55,1) infinite}
+@keyframes raliy{0%,100%{top:calc(100% - 46px)}50%{top:0}}
+.bola{pointer-events:auto;width:46px;height:46px;border:0;padding:0;background:none;cursor:pointer;border-radius:50%;display:block;animation:gira 1.8s linear infinite;filter:drop-shadow(0 6px 8px rgba(0,0,0,.35))}
+.bola svg{width:100%;height:100%;display:block}
+@keyframes gira{to{transform:rotate(360deg)}}
+.bola.toque{animation:toque .45s ease-out}
+@keyframes toque{0%{transform:scale(1)}40%{transform:scale(1.45)}100%{transform:scale(1)}}
+.onda{position:absolute;width:46px;height:46px;border-radius:50%;border:3px solid var(--bola);pointer-events:none;animation:onda .7s ease-out forwards}
+@keyframes onda{to{transform:scale(3);opacity:0}}
+.placar-toques{position:absolute;z-index:3;right:24px;bottom:24px;background:var(--cozinha);border:2px solid var(--bola);color:#fff;border-radius:10px;padding:4px 12px;font-family:var(--disp);font-weight:800;font-size:20px;opacity:0;transform:translateY(8px);transition:opacity .3s,transform .3s}
+.placar-toques.vis{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rali-x{left:70%}.rali-y{top:0}}
+.marca-logo{width:52px;height:52px;border-radius:50%;background:var(--bola);color:var(--quadra-esc);display:grid;place-items:center;font-family:var(--disp);font-weight:900;font-size:17px;line-height:1;overflow:hidden;flex:none}
+.marca-logo img{width:100%;height:100%;object-fit:cover}
+.marca-nome{font-family:var(--disp);font-weight:800;font-size:24px;letter-spacing:.02em;line-height:1}
+.marca-nome small{display:block;font-family:var(--txt);font-weight:500;font-size:13px;letter-spacing:0;opacity:.85;margin-top:4px}
+.placar{background:var(--quadra-esc);border:3px solid var(--linha);max-width:620px;padding:26px 24px 28px;box-shadow:8px 8px 0 var(--bola)}
+.placar h1{font-family:var(--disp);font-weight:900;font-size:clamp(46px,9vw,84px);line-height:.92;letter-spacing:.005em}
+.placar p{margin-top:16px;font-size:18px;max-width:46ch;opacity:.95}
+.acoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:0 22px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent;cursor:pointer;font-size:16px}
+.btn-bola{background:var(--bola);color:var(--tinta)}
+.btn-bola:hover{background:#FFB21F}
+.btn-linha{border-color:var(--linha);color:var(--linha);background:transparent}
+.btn-linha:hover{background:rgba(255,255,255,.1)}
+.idades{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
+.idades-dica{font-size:14px;opacity:.8;margin-top:22px}
+.idades button{font-family:var(--disp);font-weight:800;font-size:22px;background:var(--linha);color:var(--tinta);padding:2px 13px;border-radius:999px;border:2px solid var(--linha);cursor:pointer;transition:background .2s,color .2s}
+.idades button:hover{background:#FFE7BF}
+.idades button[aria-pressed="true"]{background:var(--bola);border-color:var(--bola)}
+.idade-txt{margin-top:12px;min-height:3.1em;font-size:16px;color:#fff;border-left:4px solid var(--bola);padding-left:12px}
+
+/* ---------- Seções ---------- */
+section{padding:64px 0}
+h2{font-family:var(--disp);font-weight:900;font-size:clamp(34px,6vw,52px);line-height:1;color:var(--quadra-esc)}
+.intro{margin-top:12px;color:var(--tinta-suave);max-width:60ch}
+
+/* vídeo destaque */
+.destaque{display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:40px;align-items:center}
+@media (max-width:760px){.destaque{grid-template-columns:1fr;gap:24px}}
+.tela{position:relative;aspect-ratio:9/16;background:var(--quadra-esc);border-radius:22px;overflow:hidden;border:6px solid var(--tinta);max-width:340px;width:100%;margin:0 auto}
+.tela iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.tela button{position:absolute;inset:0;border:0;background:var(--quadra-esc) center/cover no-repeat;cursor:pointer}
+.tela button::after{content:"";position:absolute;left:50%;top:50%;width:76px;height:76px;margin:-38px 0 0 -38px;border-radius:50%;background:var(--bola) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M8 5v14l11-7z' fill='%23121212'/%3E%3C/svg%3E") center/38px no-repeat;box-shadow:0 6px 20px rgba(0,0,0,.35)}
+
+/* benefícios */
+.beneficios{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:36px;border-top:3px solid var(--quadra)}
+@media (max-width:760px){.beneficios{grid-template-columns:1fr}}
+.beneficio{padding:24px 24px 8px 0}
+.beneficio + .beneficio{padding-left:24px;border-left:1px solid var(--borda)}
+@media (max-width:760px){.beneficio,.beneficio + .beneficio{padding:22px 0 6px;border-left:0;border-bottom:1px solid var(--borda)}}
+.beneficio svg{width:40px;height:40px;color:var(--cozinha)}
+.beneficio h3{font-family:var(--disp);font-weight:800;font-size:27px;line-height:1.05;margin:12px 0 8px;color:var(--tinta)}
+.beneficio p{color:var(--tinta-suave);font-size:16px}
+
+/* oferta */
+.oferta{background:var(--cozinha);color:#fff;border-top:6px solid var(--bola)}
+.oferta h2{color:#fff}
+.oferta .intro{color:rgba(255,255,255,.9)}
+.ingresso{margin-top:32px;background:#fff;color:var(--tinta);display:grid;grid-template-columns:repeat(3,1fr);border-radius:18px;overflow:hidden}
+@media (max-width:760px){.ingresso{grid-template-columns:1fr}}
+.vantagem{padding:26px 24px;position:relative}
+.vantagem + .vantagem{border-left:3px dashed var(--borda)}
+@media (max-width:760px){.vantagem + .vantagem{border-left:0;border-top:3px dashed var(--borda)}}
+.vantagem strong{display:inline-block;font-family:var(--disp);font-weight:900;font-size:58px;line-height:.9;color:var(--quadra);border-bottom:6px solid var(--bola);padding-bottom:4px}
+.vantagem span{display:block;margin-top:10px;font-weight:600}
+.vantagem small{display:block;color:var(--tinta-suave);font-size:14px;margin-top:4px}
+.oferta-nota{margin-top:18px;font-size:14px;color:rgba(255,255,255,.88)}
+
+/* passos */
+.passos{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:36px;counter-reset:p}
+@media (max-width:760px){.passos{grid-template-columns:1fr;gap:20px}}
+.passos li{counter-increment:p;display:grid;grid-template-columns:52px 1fr;gap:14px;align-items:start}
+.passos li::before{content:counter(p);width:52px;height:52px;border-radius:50%;background:var(--bola);display:grid;place-items:center;font-family:var(--disp);font-weight:900;font-size:28px;color:var(--tinta)}
+.passos h3{font-size:18px;font-weight:700;margin-top:4px}
+.passos p{color:var(--tinta-suave);font-size:16px;margin-top:4px}
+
+/* vídeos */
+.videos{background:#fff;border-top:1px solid var(--borda);border-bottom:1px solid var(--borda)}
+.abas{display:flex;gap:8px;flex-wrap:wrap;margin-top:28px}
+.aba{border:2px solid var(--quadra);background:transparent;color:var(--quadra);border-radius:999px;padding:8px 16px;font-weight:600;cursor:pointer;font-size:15px}
+.aba[aria-selected="true"]{background:var(--quadra);color:#fff}
+.aba b{font-weight:700;opacity:.7;margin-left:4px}
+.grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px;margin-top:24px}
+.vid{background:var(--fundo);border:0;border-radius:14px;overflow:hidden;text-align:left;cursor:pointer;display:flex;flex-direction:column;text-decoration:none}
+.vid:hover .vid-capa{filter:brightness(1.08)}
+.vid-capa{aspect-ratio:9/12;background:var(--quadra) center/cover no-repeat;position:relative}
+.vid-capa .dur{position:absolute;right:8px;bottom:8px;background:rgba(0,0,0,.8);color:#fff;font-size:12px;font-weight:600;padding:2px 7px;border-radius:6px}
+.vid-capa.social{display:grid;place-items:center;background:var(--quadra)}
+.vid-capa.social.fb{background:var(--cozinha)}
+.vid-capa.social svg{width:46px;height:46px;color:#fff;opacity:.95}
+.vid-capa.social em{position:absolute;left:10px;top:8px;font-family:var(--disp);font-weight:900;font-style:normal;font-size:30px;color:var(--bola)}
+.vid-txt{padding:10px 12px 12px;font-size:14px;line-height:1.35;font-weight:500}
+.vid-txt small{display:block;color:var(--tinta-suave);font-weight:500;margin-top:3px;font-size:12.5px}
+.mais{margin-top:20px}
+
+/* local */
+.local{display:grid;grid-template-columns:1fr 1.2fr;gap:36px;align-items:stretch}
+@media (max-width:760px){.local{grid-template-columns:1fr}}
+.mapa{min-height:340px;border-radius:18px;overflow:hidden;border:3px solid var(--quadra);background:var(--borda)}
+.mapa iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+.local dl{margin-top:20px}
+.local dt{font-weight:700;margin-top:14px}
+.local dd{color:var(--tinta-suave)}
+
+/* formulário */
+.cadastro{background:var(--quadra);color:#fff}
+.cadastro h2{color:#fff}
+.cadastro .intro{color:rgba(255,255,255,.9)}
+
+
+.zap-grande{display:inline-flex;align-items:center;gap:16px;margin-top:30px;background:var(--bola);color:var(--tinta);text-decoration:none;border-radius:22px;padding:18px 28px 18px 20px;box-shadow:8px 8px 0 var(--linha);font-family:var(--disp);font-weight:900;font-size:clamp(30px,6vw,40px);line-height:1}
+.zap-grande:hover{background:#FFB21F}
+.zap-grande:active{transform:translate(3px,3px);box-shadow:5px 5px 0 var(--linha)}
+.zap-grande .zap-ic{width:58px;height:58px;flex:none;background:var(--tinta);color:var(--zap);border-radius:50%;padding:11px}
+.zap-grande small{display:flex;align-items:center;gap:8px;font-family:var(--txt);font-weight:600;font-size:15px;margin-top:8px}
+.btn .zap-ic{width:22px;height:22px}
+.fixo .btn{gap:10px}
+footer{background:var(--tinta);color:rgba(255,255,255,.85);padding:36px 0;font-size:15px}
+footer .miolo{display:flex;flex-wrap:wrap;gap:16px 28px;justify-content:space-between;align-items:center}
+footer a{color:#fff}
+footer nav{display:flex;gap:18px;flex-wrap:wrap}
+
+/* modal */
+dialog{border:0;padding:0;background:transparent;max-width:min(420px,92vw);width:100%;margin:auto}
+dialog::backdrop{background:rgba(10,26,47,.86)}
+.modal-caixa{position:relative;background:#000;border-radius:18px;overflow:hidden;aspect-ratio:9/16;max-height:86vh;margin:0 auto}
+.modal-caixa iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#fff}
+.fechar{position:absolute;right:-6px;top:-52px;width:44px;height:44px;border-radius:50%;border:0;background:var(--bola);font-size:24px;font-weight:700;cursor:pointer;color:var(--tinta)}
+.modal-link{display:block;text-align:center;color:#fff;margin-top:12px;font-size:15px}
+.fixo{position:fixed;right:20px;bottom:20px;z-index:20;display:flex;transition:opacity .3s,transform .3s}
+.fixo.oculto{opacity:0;transform:translateY(20px);pointer-events:none}
+@media (max-width:760px){.fixo{left:16px;right:16px;bottom:14px}}
+.fixo .btn{width:100%;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+</style>
+</head>
+<body>
+
+<header class="barra">
+  <div class="barra-in">
+    <a class="barra-logo" href="#inicio" aria-label="Arena NIT 360, voltar ao início"><img src="data:image/png;base64,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" alt="Arena NIT 360 Pickleball" width="720" height="283"></a>
+    <nav class="menu" aria-label="Seções da página">
+      <a href="#video">Como é</a>
+      <a href="#beneficios">Benefícios</a>
+      <a href="#oferta">Vantagens</a>
+      <a href="#como">Como agendar</a>
+      <a href="#videos">Vídeos</a>
+      <a href="#local">Onde fica</a>
+    </nav>
+    <a class="barra-zap js-zap" href="#"><span class="ao-vivo" aria-hidden="true"></span>WhatsApp</a>
+  </div>
+</header>
+
+<section class="quadra" id="inicio">
+  <div class="quadra-linhas" aria-hidden="true"></div>
+  <div class="cozinha" aria-hidden="true"></div>
+  <div class="rede" aria-hidden="true"></div>
+  <div class="rali" aria-hidden="true"><div class="rali-x"><div class="rali-y"><button class="bola" id="bola" tabindex="-1" title="Toque na bola"><svg viewBox="0 0 46 46"><circle cx="23" cy="23" r="22" fill="#F59E0B"/><circle cx="23" cy="23" r="22" fill="none" stroke="#C97A00" stroke-width="2"/><g fill="#B86E00"><circle cx="23" cy="9" r="3"/><circle cx="23" cy="37" r="3"/><circle cx="9" cy="23" r="3"/><circle cx="37" cy="23" r="3"/><circle cx="13" cy="13" r="2.6"/><circle cx="33" cy="13" r="2.6"/><circle cx="13" cy="33" r="2.6"/><circle cx="33" cy="33" r="2.6"/><circle cx="23" cy="23" r="3.2"/></g><ellipse cx="16" cy="14" rx="6" ry="3.5" fill="#fff" opacity=".35" transform="rotate(-30 16 14)"/></svg></button></div></div></div>
+  <div class="placar-toques" id="placar-toques" aria-live="polite"></div>
+  <div class="miolo quadra-conteudo">
+    <div class="placar">
+      <h1>Pickleball: seu novo esporte, leve nas articulações</h1>
+      <p>Fácil de aprender, dinâmico e de baixo impacto. Sua primeira aula no Clube Espanhol, em Itaipu, é grátis.</p>
+      <div class="acoes">
+        <a class="btn btn-bola js-zap" href="#"><svg class="zap-ic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>Agendar aula grátis</a>
+        <a class="btn btn-linha" href="#video">Ver como é</a>
+      </div>
+      <p class="idades-dica">Toque na sua idade e veja o que o pickleball faz por você:</p>
+      <div class="idades" id="idades" role="group" aria-label="Escolha sua faixa de idade"><button aria-pressed="false" data-i="0">16</button><button aria-pressed="false" data-i="1">25</button><button aria-pressed="false" data-i="2">45</button><button aria-pressed="false" data-i="3">60</button><button aria-pressed="false" data-i="4">80+</button></div>
+      <p class="idade-txt" id="idade-txt" aria-live="polite">Dos 16 aos 80 anos, todo mundo joga junto na mesma quadra.</p>
+    </div>
+  </div>
+</section>
+
+<main>
+<section id="video">
+  <div class="miolo destaque">
+    <div class="tela" id="tela-destaque"></div>
+    <div>
+      <h2>Veja em 30 segundos</h2>
+      <p class="intro">Gente de 25 a 80 anos jogando junta, rindo depois de cada ponto. A bola é leve, a quadra é menor que a de tênis e em uma aula você já está trocando bolas.</p>
+      <div class="acoes"><a class="btn btn-bola js-zap" href="#"><svg class="zap-ic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>Agendar pelo WhatsApp</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="beneficios" style="padding-top:8px">
+  <div class="miolo">
+    <h2>Um complemento para o seu treino</h2>
+    <p class="intro">O pickleball soma ao que você já faz na academia: cardio, agilidade e convivência, sem a sobrecarga de outros esportes de quadra.</p>
+    <div class="beneficios">
+      <div class="beneficio">
+        <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M14 4v12c0 3 2 5 6 5s6-2 6-5V4"/><path d="M14 36V26c0-3 2-5 6-5s6 2 6 5v10"/><circle cx="20" cy="21" r="2.2" fill="currentColor"/></svg>
+        <h3>Baixo impacto nas articulações</h3>
+        <p>Ganho cardiovascular preservando joelhos, tornozelos e coluna.</p>
+      </div>
+      <div class="beneficio">
+        <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M4 30h32"/><path d="M20 30V10"/><path d="M10 18l10-8 10 8"/><circle cx="20" cy="8" r="3"/></svg>
+        <h3>Mobilidade e equilíbrio</h3>
+        <p>Agilidade lateral e coordenação que ajudam a prevenir quedas, especialmente a partir dos 60.</p>
+      </div>
+      <div class="beneficio">
+        <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><circle cx="13" cy="13" r="5"/><circle cx="27" cy="13" r="5"/><path d="M4 33c1-6 5-9 9-9s8 3 9 9"/><path d="M18 33c1-6 5-9 9-9s8 3 9 9"/></svg>
+        <h3>Condicionamento e cabeça boa</h3>
+        <p>Resistência física, bem-estar e uma turma nova para jogar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="oferta" id="oferta">
+  <div class="miolo">
+    <h2>Vantagens para quem vem da academia</h2>
+    <p class="intro">Válidas no seu primeiro mês na Arena NIT 360.</p>
+    <div class="ingresso">
+      <div class="vantagem"><strong>Grátis</strong><span>Primeira aula experimental</span><small>No Clube Espanhol, em Itaipu</small></div>
+      <div class="vantagem"><strong>20%</strong><span>Na primeira mensalidade</span><small>Do curso de pickleball</small></div>
+      <div class="vantagem"><strong>20%</strong><span>Em quadra ou pacote de 4 aulas</span><small>Reservas individuais ou pacote, no 1º mês</small></div>
+    </div>
+    <p class="oferta-nota">As aulas acontecem nas quadras da Arena NIT 360 no Clube Espanhol. Não há aulas dentro das academias parceiras.</p>
+  </div>
+</section>
+
+<section id="como">
+  <div class="miolo">
+    <h2>Como agendar</h2>
+    <ol class="passos">
+      <li><div><h3>Toque no botão do WhatsApp</h3><p>A conversa abre com a mensagem pronta. É só enviar.</p></div></li>
+      <li><div><h3>Combine o dia com a equipe</h3><p>A equipe da Arena NIT 360 responde e marca sua aula.</p></div></li>
+      <li><div><h3>Venha jogar</h3><p>Venha com roupa e tênis de treino. A equipe confirma os detalhes pelo WhatsApp.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="videos" id="videos">
+  <div class="miolo">
+    <h2>Mais vídeos da arena</h2>
+    <p class="intro">Aulas, jogos, eventos e as quadras do Clube Espanhol e do Clube Naval. Toque para assistir.</p>
+    <div class="abas" role="tablist" id="abas"></div>
+    <div class="grade" id="grade"></div>
+    <div class="mais" id="mais"></div>
+  </div>
+</section>
+
+<section id="local">
+  <div class="miolo local">
+    <div>
+      <h2>Onde é a aula</h2>
+      <p class="intro">Quadras da Arena NIT 360 no Clube Espanhol, na Região Oceânica de Niterói.</p>
+      <dl>
+        <dt>Endereço</dt><dd id="endereco"></dd>
+        <dt>Horários</dt><dd id="horarios"></dd>
+      </dl>
+      <div class="acoes"><a class="btn btn-bola" id="como-chegar" target="_blank" rel="noopener">Abrir no Google Maps</a></div>
+    </div>
+    <div class="mapa"><iframe id="mapa" title="Mapa da Arena NIT 360 no Clube Espanhol" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+  </div>
+</section>
+
+<section class="cadastro" id="cadastro">
+  <div class="miolo contato">
+    <h2>Sua primeira aula é por nossa conta</h2>
+    <p class="intro">Sem formulário. Toque no botão, envie a mensagem que já vem escrita e a equipe da Arena NIT 360 marca sua aula experimental no Clube Espanhol.</p>
+    <a class="zap-grande js-zap" href="#"><svg class="zap-ic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg><span>Agendar pelo WhatsApp<small><span class="ao-vivo" aria-hidden="true"></span><span id="zap-num"></span></small></span></a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="miolo">
+    <div>Arena NIT 360 · Clube Espanhol, Itaipu, Niterói</div>
+    <nav id="redes"></nav>
+  </div>
+</footer>
+
+<div class="fixo" id="fixo"><a class="btn btn-bola js-zap" href="#"><svg class="zap-ic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>Agendar aula grátis</a></div>
+
+<dialog id="modal" aria-label="Vídeo">
+  <button class="fechar" id="fechar" aria-label="Fechar vídeo">×</button>
+  <div class="modal-caixa" id="modal-caixa"></div>
+  <a class="modal-link" id="modal-link" target="_blank" rel="noopener">Abrir no app</a>
+</dialog>
+
+<script>
+/* =========================================================
+   CONFIGURAÇÃO — edite aqui. O resto da página se ajusta sozinho.
+   ========================================================= */
+const CONFIG = {
+  // WhatsApp de atendimento da Arena NIT 360 (55 + DDD + número)
+  whatsapp: "5521978709898",
+  // Mensagem que já vem escrita. {academia} vira " na academia Fulano" quando o QR traz ?academia=Fulano
+  mensagem: "Olá! Vi o QR Code da Arena NIT 360{academia} e quero agendar minha aula experimental grátis de pickleball.",
+  endereco: "Clube Espanhol de Niterói — Praça Espanha, Santo Antônio (Região Oceânica, perto de Itaipu), Niterói – RJ",
+  horarios: "A combinar pelo WhatsApp",
+  // Google Maps: nome e endereço da Arena como aparecem no Google
+  mapaBusca: "ARENA NIT 360 - PICKLEBALL, Praça Espanha - Santo Antônio, Niterói - RJ",
+  mapaPlaceId: "ChIJwefKQgCHmQAR3AIbg-396vs",
+  instagram: "",
+  youtube: "https://www.youtube.com/@MarceloAbelheira-es5bf",
+  // Vídeo principal do topo (ID do YouTube). Troque pelo vídeo oficial de 30–40s quando estiver pronto.
+  videoDestaque: "3nC9FRHrh4I"
+};
+
+/* DADOS — social: links enviados por Moyses (Instagram, Facebook, YouTube)
+   yt: vídeos da Arena NIT 360 no canal Pickleball Itinerante. g = espanhol | naval | eventos */
+const DADOS = {"social": [{"p": "ig", "id": "De68M69CmSa", "u": "https://www.instagram.com/reel/De68M69CmSa/"}, {"p": "ig", "id": "De91aRjBFRq", "u": "https://www.instagram.com/reel/De91aRjBFRq/"}, {"p": "fb", "u": "https://www.facebook.com/share/r/1F6XS2RwoJ/"}, {"p": "fb", "u": "https://www.facebook.com/share/r/1J2GPRybnx/"}, {"p": "ig", "id": "DeslF6wlgzL", "u": "https://www.instagram.com/reel/DeslF6wlgzL/"}, {"p": "ig", "id": "De0BYQppPj4", "u": "https://www.instagram.com/reel/De0BYQppPj4/"}, {"p": "yt", "id": "3nC9FRHrh4I", "u": "https://youtube.com/shorts/3nC9FRHrh4I"}, {"p": "fb", "u": "https://www.facebook.com/share/r/1GsbdrNxpM/"}, {"p": "ig", "id": "DZY_OI7t04u", "u": "https://www.instagram.com/reel/DZY_OI7t04u/"}, {"p": "fb", "u": "https://www.facebook.com/share/r/14yGsHjRWkb/"}, {"p": "fb", "u": "https://www.facebook.com/share/r/1KBNPaqqJY/"}, {"p": "fb", "u": "https://www.facebook.com/share/r/1BnPjKw2NV/"}, {"p": "ig", "id": "DdwNSZ-BKMO", "u": "https://www.instagram.com/reel/DdwNSZ-BKMO/"}, {"p": "fb", "u": "https://www.facebook.com/share/r/1EAjYQxHu4/"}, {"p": "ig", "id": "Db6W-5PKjIx", "u": "https://www.instagram.com/reel/Db6W-5PKjIx/"}, {"p": "ig", "id": "Dd-HNbXs75_", "u": "https://www.instagram.com/reel/Dd-HNbXs75_/"}, {"p": "ig", "id": "DefEZa4sHN6", "u": "https://www.instagram.com/reel/DefEZa4sHN6/"}, {"p": "fb", "u": "https://www.facebook.com/share/r/18LGARUkVy/"}, {"p": "ig", "id": "DfJNdfRRuby", "u": "https://www.instagram.com/reel/DfJNdfRRuby/"}, {"p": "ig", "id": "DfPhdYrxz80", "u": "https://www.instagram.com/reel/DfPhdYrxz80/"}, {"p": "ig", "id": "De5aFRokVbu", "u": "https://www.instagram.com/reel/De5aFRokVbu/"}, {"p": "ig", "id": "DfSTUzRxiZh", "u": "https://www.instagram.com/reel/DfSTUzRxiZh/"}, {"p": "ig", "id": "DfV5j3ixSrI", "u": "https://www.instagram.com/reel/DfV5j3ixSrI/"}, {"p": "ig", "id": "DeedkweNMI5", "u": "https://www.instagram.com/reel/DeedkweNMI5/"}], "yt": [{"id": "4dnJ65CZFZE", "d": "0:31", "t": "INAUGURAÇÃO DA ARENA NIT 360 NO CLUBE ESPANHOL - 15/11/25 - video amador", "g": "espanhol"}, {"id": "ycvlW7eLRFI", "d": "0:36", "t": "INAUGURAÇÃO DA ARENA NIT 360 NO CLUBE NAVAL CHARITAS - 15/03/26 - video amador", "g": "naval"}, {"id": "Zsn2UuFdHsY", "d": "0:43", "t": "Clube Espanhol de Icaraí - bate bola com Moyses em 01/07/25", "g": "espanhol"}, {"id": "u7TBtqlu6YA", "d": "0:40", "t": "ARENA NIT 360 - pré inauguração- noite de 13/11/25", "g": "espanhol"}, {"id": "MsnWwO0_pbw", "d": "0:59", "t": "ARENA NIT 360 - pré-inauguração - ajustes finais quinta-feira", "g": "espanhol"}, {"id": "d3n0GgC_e4E", "d": "0:36", "t": "ARENA NIT 360 - Entrada do Clube e estacionamento externo", "g": "espanhol"}, {"id": "E0CjC44WnwU", "d": "1:11", "t": "INAUGURAÇÃO ARENA NIT 360 - entrevista com Gianni e Bruno Olegário", "g": "espanhol"}, {"id": "nVkcYxUnQLA", "d": "0:47", "t": "INAUGURAÇÃO ARENA NIT 360 - entrevista com casal Barbieri", "g": "espanhol"}, {"id": "_HOEu4q53y0", "d": "0:09", "t": "INAUGURAÇÃO ARENA NIT 360 - foto geral com grito de incentivo do Ulisses", "g": "espanhol"}, {"id": "2r6PpZggdBY", "d": "0:20", "t": "INAUGURAÇÃO ARENA NIT 360 - visão superior", "g": "espanhol"}, {"id": "VYWs59H_bco", "d": "0:35", "t": "INAUGURAÇÃO ARENA NIT 360 - visão superior no tour com meninas da Seleção RJ", "g": "espanhol"}, {"id": "PBf5Vrk73UU", "d": "0:47", "t": "INAUGURAÇÃO ARENA NIT 360 - Agradecimento Final (sócios e esposas)", "g": "espanhol"}, {"id": "dOUvMuZOKtU", "d": "1:02", "t": "INAUGURAÇÃO ARENA NIT 360 - visão geral superior - vídeo do Bruno Barros", "g": "espanhol"}, {"id": "hH-QPQZGCDI", "d": "1:01", "t": "Visita ILUSTRE - Pastor Maranhão na ARENA NIT 360 - 30/12/25", "g": "espanhol"}, {"id": "So94ohWRAf0", "d": "1:16", "t": "PICKLEBALL EM FAMÍLIA - ARENA NIT 360 - domingão - 08/02/09", "g": "espanhol"}, {"id": "9ANtKDDBUDU", "d": "1:07", "t": "CLUBE NAVAL DE CHARITAS - primeira visita com Moyses - salão principal- jan 26", "g": "naval"}, {"id": "lH0foLkW4KM", "d": "0:33", "t": "CLUBE NAVAL DE CHARITAS - área externa - primeira visita com Moyses - jan 26", "g": "naval"}, {"id": "RifHvbnn23g", "d": "0:35", "t": "Pickleball na ARENA NIT 360", "g": "espanhol"}, {"id": "U8Wn9TKJ4kA", "d": "5:29", "t": "Torneio APRJ 250 (Arena Nit 360) | Cerimônia de Abertura | 25/04/2026", "g": "eventos"}, {"id": "ZcyUjfz2QtA", "d": "1:01", "t": "Torneio Track and Field na ARENA NIT 360 - 2ª Etapa- 28/06/26 - Single Masculina", "g": "eventos"}, {"id": "VHVdOIjKlsA", "d": "0:36", "t": "Clube Naval Charitas - terraço e quadra do salão - 23/06/26", "g": "naval"}, {"id": "elng3I36O0U", "d": "0:35", "t": "Clube Naval Charitas - quadras do Terraço - 23/06/26", "g": "naval"}, {"id": "RVnTCjfeTJ0", "d": "0:08", "t": "Clube Naval Charitas- bate bola no terraço- 23/06/26", "g": "naval"}, {"id": "47Cktdyz9FY", "d": "0:10", "t": "Clube Naval Charitas- PLAY no salão nobre- 23/06/26", "g": "naval"}, {"id": "pWI5twNU12A", "d": "0:15", "t": "Jogo do Brasil na Copa na ARENA NIT 360 DO CLUBE ESPANHOL - 29/06/26", "g": "espanhol"}, {"id": "8dLdRC8BopY", "d": "0:20", "t": "ARENA NIT 360 NO CLUBE ESPANHOL DE NITERÓI- VIVA O PICKLEBALL", "g": "espanhol"}, {"id": "tzmLa9Y-zTs", "d": "1:37", "t": "Altura das redes na ARENA NIT 360 DO CLUBE ESPANHOL DE NITERÓI", "g": "espanhol"}, {"id": "6evoBKkIwiA", "d": "0:19", "t": "Sofia Kelbert em Clínica na ARENA NIT 360 - 06/01/26 - vista superior", "g": "espanhol"}, {"id": "UJC6hpqs3VY", "d": "1:06", "t": "Terraço do Clube Naval Charitas - PLAY em 06/06/26", "g": "naval"}, {"id": "_lEErm3cyyE", "d": "1:20", "t": "ARENA NIT 360 DO CLUBE ESPANHOL DE NITERÓI - julho de 2026", "g": "espanhol"}, {"id": "AN_o9-A3-0c", "d": "0:50", "t": "Pickleball em família - casal de um lado X pai e filho de outro", "g": "espanhol"}, {"id": "G_QvO5r3Zio", "d": "0:41", "t": "OUTUBRO ROSA NA ARENA NIT 360 DO CLUB ESPAÑOL DE NITERÓI - 31/10/26 - 1", "g": "eventos"}, {"id": "4ryVQIOOvMI", "d": "0:36", "t": "OUTUBRO ROSA NA ARENA NIT 360 DO CLUB ESPAÑOL DE NITERÓI - 31/10/26", "g": "eventos"}, {"id": "9NF2cH4832M", "d": "0:17", "t": "OUTUBRO ROSA NA ARENA NIT 360 DO CLUB ESPAÑOL DE NITERÓI - 31/10/26 - 3", "g": "eventos"}, {"id": "oGUvSIxSedc", "d": "0:20", "t": "OUTUBRO ROSA (aulinha rápida para torcedores) NA ARENA NIT 360 DO CLUB ESPAÑOL DE NITERÓI - 31/10/26", "g": "eventos"}, {"id": "O6_Me2J4DiM", "d": "0:27", "t": "OUTUBRO ROSA NA ARENA NIT 360 DO CLUB ESPAÑOL DE NITERÓI - 31/10/26 - lindo LOB da Aninha", "g": "eventos"}, {"id": "tCLfWMF966Q", "d": "0:30", "t": "OUTUBRO ROSA NA ARENA NIT 360 DO CLUB ESPAÑOL DE NITERÓI - 31/10/26 - ponto final", "g": "eventos"}, {"id": "EjcmJ9aPD4k", "d": "0:26", "t": "OUTUBRO ROSA NA ARENA NIT 360 DO CLUB ESPAÑOL DE NITERÓI - 31/10/26 - organização dos resultados", "g": "eventos"}, {"id": "xf14MFAHQ1A", "d": "0:27", "t": "No Pickleball da ARENA NIT 360 \"O SORRISO É GARANTIDO\"", "g": "espanhol"}, {"id": "dmBGp7lII_U", "d": "1:29", "t": "ARENA NIT 360 DO CLUB ESPAÑOL DE NITERÓI - 13/09/26", "g": "espanhol"}, {"id": "m0HVbTOSPCg", "d": "0:11", "t": "ARENA NIT 360 NO CLUBE ESPANHOL DE NITERÓI- celular na rede", "g": "espanhol"}, {"id": "EFIQzhv7qMk", "d": "0:15", "t": "Pickleball em família- ATENA NIT 360", "g": "espanhol"}, {"id": "BLIc14hjrrw", "d": "0:40", "t": "Pickleball no Clube Naval de Charitas", "g": "naval"}, {"id": "GNraMnnl24g", "d": "3:56", "t": "SEGURANÇA NO PICKLEBALL", "g": "espanhol"}, {"id": "tgfjYmqffiA", "d": "3:12", "t": "TORNEIO NA ARENA NIT 360 chancelado pela APRJ (abril de 2026)", "g": "eventos"}]};
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const thumb = id => `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+const ICONE = {
+  ig:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>',
+  fb:'<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8V6.5c0-.8.4-1.5 1.6-1.5H17V2h-2.6C11.6 2 11 4 11 6v2H9v3h2v11h3V11h2.6l.4-3z"/></svg>'
+};
+
+/* logo e textos */
+$('#endereco').textContent = CONFIG.endereco;
+$('#horarios').textContent = CONFIG.horarios;
+$('#como-chegar').href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(CONFIG.mapaBusca) + '&query_place_id=' + CONFIG.mapaPlaceId;
+$('#mapa').src = 'https://www.google.com/maps?q=' + encodeURIComponent(CONFIG.mapaBusca) + '&z=16&output=embed';
+const redes = [];
+if (CONFIG.instagram) redes.push(`<a href="${esc(CONFIG.instagram)}" target="_blank" rel="noopener">Instagram</a>`);
+if (CONFIG.youtube) redes.push(`<a href="${esc(CONFIG.youtube)}" target="_blank" rel="noopener">YouTube</a>`);
+if (CONFIG.whatsapp) redes.push(`<a class="js-zap" href="https://wa.me/${CONFIG.whatsapp}">WhatsApp</a>`);
+$('#redes').innerHTML = redes.join('');
+
+/* academia de origem pelo link do QR: ...?academia=NomeDaAcademia */
+const params = new URLSearchParams(location.search);
+const origem = (params.get('academia') || params.get('origem') || '').trim();
+const textoZap = CONFIG.mensagem.replace('{academia}', origem ? ` na academia ${origem}` : '');
+const linkZap = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(textoZap)}`;
+document.querySelectorAll('.js-zap').forEach(a => { a.href = linkZap; a.target = '_blank'; a.rel = 'noopener'; });
+{ const n = CONFIG.whatsapp.replace(/^55/, ''); $('#zap-num').textContent = `(${n.slice(0,2)}) ${n.slice(2,-4)}-${n.slice(-4)}`; }
+
+/* vídeo destaque: carrega o player só no toque (página abre mais rápido) */
+{
+  const t = $('#tela-destaque'), id = CONFIG.videoDestaque;
+  const b = document.createElement('button');
+  b.setAttribute('aria-label', 'Assistir ao vídeo');
+  b.style.backgroundImage = `url(${thumb(id)})`;
+  b.onclick = () => { t.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1&playsinline=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen title="Vídeo do pickleball na Arena NIT 360"></iframe>`; };
+  t.appendChild(b);
+}
+
+/* abas de vídeos */
+const GRUPOS = [
+  {k:'espanhol', nome:'Clube Espanhol', itens: DADOS.yt.filter(v=>v.g==='espanhol')},
+  {k:'social', nome:'Seleção da Arena', itens: DADOS.social},
+  {k:'eventos', nome:'Eventos e torneios', itens: DADOS.yt.filter(v=>v.g==='eventos')},
+  {k:'naval', nome:'Clube Naval', itens: DADOS.yt.filter(v=>v.g==='naval')}
+];
+const POR_PAGINA = 12;
+let atual = GRUPOS[0], mostrando = POR_PAGINA;
+
+function cartao(v, i){
+  if (atual.k === 'social'){
+    if (v.p === 'yt') return `<button class="vid" data-yt="${v.id}" data-url="${esc(v.u)}"><div class="vid-capa" style="background-image:url(${thumb(v.id)})"></div><div class="vid-txt">Vídeo ${i+1}<small>YouTube</small></div></button>`;
+    const nome = v.p === 'ig' ? 'Instagram' : 'Facebook';
+    const attrs = v.p === 'ig' ? `data-ig="${v.id}" data-url="${esc(v.u)}"` : '';
+    const tag = v.p === 'fb' ? `a href="${esc(v.u)}" target="_blank" rel="noopener"` : 'button';
+    const fim = v.p === 'fb' ? 'a' : 'button';
+    return `<${tag} class="vid" ${attrs}><div class="vid-capa social ${v.p}"><em>${i+1}</em>${ICONE[v.p]}</div><div class="vid-txt">Vídeo ${i+1}<small>${nome}${v.p==='fb'?' · abre no app':''}</small></div></${fim}>`;
+  }
+  return `<button class="vid" data-yt="${v.id}" data-url="https://www.youtube.com/watch?v=${v.id}"><div class="vid-capa" style="background-image:url(${thumb(v.id)})"><span class="dur">${esc(v.d)}</span></div><div class="vid-txt">${esc(v.t)}</div></button>`;
+}
+function desenhar(){
+  $('#abas').innerHTML = GRUPOS.map(g => `<button class="aba" role="tab" aria-selected="${g===atual}" data-k="${g.k}">${g.nome}<b>${g.itens.length}</b></button>`).join('');
+  $('#grade').innerHTML = atual.itens.slice(0, mostrando).map(cartao).join('');
+  const resta = atual.itens.length - mostrando;
+  $('#mais').innerHTML = resta > 0 ? `<button class="aba" id="ver-mais">Mostrar mais ${Math.min(resta, POR_PAGINA)}</button>` : '';
+}
+$('#abas').addEventListener('click', e => {
+  const b = e.target.closest('[data-k]'); if (!b) return;
+  atual = GRUPOS.find(g => g.k === b.dataset.k); mostrando = POR_PAGINA; desenhar();
+});
+$('#mais').addEventListener('click', e => { if (e.target.id === 'ver-mais'){ mostrando += POR_PAGINA; desenhar(); }});
+desenhar();
+
+/* modal de vídeo */
+const modal = $('#modal');
+$('#grade').addEventListener('click', e => {
+  const b = e.target.closest('button.vid'); if (!b) return;
+  let src;
+  if (b.dataset.yt) src = `https://www.youtube-nocookie.com/embed/${b.dataset.yt}?autoplay=1&playsinline=1&rel=0`;
+  else if (b.dataset.ig) src = `https://www.instagram.com/reel/${b.dataset.ig}/embed/`;
+  $('#modal-caixa').innerHTML = `<iframe src="${src}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen title="Vídeo"></iframe>`;
+  $('#modal-link').href = b.dataset.url;
+  $('#modal-link').textContent = b.dataset.ig ? 'Abrir no Instagram' : 'Abrir no YouTube';
+  modal.showModal();
+});
+const fechar = () => { modal.close(); };
+$('#fechar').onclick = fechar;
+modal.addEventListener('click', e => { if (e.target === modal) fechar(); });
+modal.addEventListener('close', () => { $('#modal-caixa').innerHTML = ''; });
+
+/* botão fixo: aparece depois do topo e some perto do botão grande */
+{
+  let noTopo = true, noFim = false;
+  const atualiza = () => $('#fixo').classList.toggle('oculto', noTopo || noFim);
+  new IntersectionObserver(([en]) => { noTopo = en.isIntersecting; atualiza(); }, {threshold:.15}).observe($('#inicio'));
+  new IntersectionObserver(([en]) => { noFim = en.isIntersecting; atualiza(); }, {threshold:.05}).observe($('#cadastro'));
+  atualiza();
+}
+
+/* menu: destaca a seção visível */
+{
+  const links = [...document.querySelectorAll('.menu a')];
+  const alvo = new Map(links.map(a => [a.getAttribute('href').slice(1), a]));
+  const obs = new IntersectionObserver(ents => ents.forEach(en => {
+    if (en.isIntersecting){
+      links.forEach(l => l.classList.remove('ativo'));
+      const a = alvo.get(en.target.id);
+      if (a){ a.classList.add('ativo'); a.scrollIntoView({block:'nearest', inline:'center', behavior:'smooth'}); }
+    }
+  }), {rootMargin:'-45% 0px -50% 0px'});
+  alvo.forEach((_, id) => { const s = document.getElementById(id); if (s) obs.observe(s); });
+}
+
+/* idades: cada faixa mostra um benefício */
+{
+  const TXT = [
+    '16 anos: reflexo, explosão e jogo competitivo desde a primeira partida.',
+    '25 anos: cardio de verdade, sem a monotonia da esteira.',
+    '45 anos: condicionamento com baixo impacto em joelhos, tornozelos e coluna.',
+    '60 anos: equilíbrio e agilidade lateral, que ajudam a prevenir quedas.',
+    '80+: movimento leve, convivência e cabeça ativa.'
+  ];
+  $('#idades').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    $('#idades').querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b));
+    $('#idade-txt').textContent = TXT[b.dataset.i];
+  });
+}
+
+/* bolinha: toque para rebater */
+{
+  const bola = $('#bola'), placar = $('#placar-toques'); let toques = 0, timer;
+  bola.addEventListener('click', () => {
+    toques++;
+    bola.classList.remove('toque'); void bola.offsetWidth; bola.classList.add('toque');
+    const o = document.createElement('span'); o.className = 'onda';
+    bola.parentElement.appendChild(o); setTimeout(() => o.remove(), 700);
+    placar.textContent = toques === 1 ? 'Boa! 1 rebatida' : `${toques} rebatidas`;
+    placar.classList.add('vis'); clearTimeout(timer);
+    timer = setTimeout(() => placar.classList.remove('vis'), 2200);
+  });
+}
+
+</script>
+</body>
+</html>
